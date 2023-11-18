@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import data from '../data/sampleData'
 import ListItemWithCopyButton from '../ListItemWithCopyButton'
 import { initGA, logPageView } from '../app/analytics';
