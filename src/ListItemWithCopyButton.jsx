@@ -1,9 +1,17 @@
 import { useState } from "react";
+import ReactGA from 'react-ga';
 
 export default function ListItemWithCopyButton({text}) {
     const initialText = "Copy"
 	const [buttonText, setButtonText] = useState(initialText)
 	function copyText() {
+
+        ReactGA.event({
+			category: 'User Interaction',
+			action: 'Clicked Copy',
+			label: 'Copy Button',
+		});
+
         try {
             navigator.clipboard.writeText(text);
             setButtonText("Copied")

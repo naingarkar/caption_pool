@@ -2,13 +2,29 @@
 import { useState } from 'react'
 import data from '../data/sampleData'
 import ListItemWithCopyButton from '../ListItemWithCopyButton'
+import { initGA, logPageView } from '../app/analytics';
+import ReactGA from 'react-ga';
 
 export default function Home() {
 
+	useEffect(() => {
+		initGA(); // Initialize Google Analytics
+		logPageView(); // Log the initial page view
+	
+		// Add additional tracking logic as needed
+	}, []);
+	
 	const [searchText, setSearchText] = useState("")
 	const [displayResults, setDisplayResults ] = useState([])
 	
 	function handleSearch() {
+
+		ReactGA.event({
+			category: 'User Interaction',
+			action: 'Clicked Search',
+			label: 'Search Button',
+		});
+
 		if(searchText !== ""){
 			let searchResult = data.filter(caption => 
 				caption.captionTitle.toLowerCase().includes(searchText.toLowerCase())
