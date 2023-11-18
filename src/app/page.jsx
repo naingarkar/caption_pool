@@ -45,28 +45,33 @@ export default function Home() {
 	
 
 	return (
-	<div className="grid grid-cols-8">
-		<div className="col-start-3 col-span-4">
-			<div className="max-w-full rounded overflow-hidden shadow-md bg-white p-4 mt-4">
-				<h1>Search Your Caption Here</h1>
-				<div className="flex items-center border border-gray-300 rounded-lg mt-4">
-					<input
-						type="text"
-						placeholder="Type Here..."
-						className="w-full rounded-l-lg px-4 py-2 border-r-0 focus:outline-none"
-						value={searchText}
-						onChange={e => setSearchText(e.target.value)}
-					/>
-					<button 
-						onClick={handleSearch}			
-						className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-r-lg border border-blue-500 border-l-0"
-					>
-						Search
-					</button>
+	<div className='px-3'>
+		<div className="grid grid-cols-8">
+			<div className="col-start-1 col-span-8 lg:col-start-3 lg:col-end-7">
+				<div className="max-w-full rounded overflow-hidden shadow-md bg-white p-2 mt-4">
+					<div className="flex items-center border border-gray-300 rounded-lg mt-4">
+						<input
+							type="text"
+							placeholder="Search Caption Here..."
+							className="w-full rounded-l-lg px-3 py-1 border-r-0 focus:outline-none"
+							value={searchText}
+							onChange={e => setSearchText(e.target.value)}
+						/>
+						<button 
+							onClick={handleSearch}			
+							className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-1 rounded-r-lg border border-blue-500 border-l-0"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+								<path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+							</svg>
+					  
+						</button>
+					</div>
+					
 				</div>
-				
-				{displayResults}
-				
+				<div className='mt-4'>
+					{displayResults}	
+				</div>
 			</div>
 		</div>
 	</div>
