@@ -30,8 +30,7 @@ export default function ListItemWithCopyButton({text}) {
     }
 
     return (
-        <div 
-        onClick={!isClicked}
+        <div
         className="relative border rounded p-2">
             <p className="text-gray-700 text-sm">{text}</p>
             <button
