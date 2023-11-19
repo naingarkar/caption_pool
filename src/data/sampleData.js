@@ -1677,7 +1677,8 @@ const data = [
     ...hotpotDateCaptionList,
     ...bbqDateCaptionList,
     ...sunsetCaptionList,
-    ...swimmingCaptionList
+    ...swimmingCaptionList,
+    ...coffeeCaptionList
 ]
 
 export default data
